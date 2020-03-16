@@ -82,8 +82,6 @@ create or replace package body fhda_datadog as
     function F_GetSetting(pi_key varchar2) return varchar2 as
         l_return_value datadog_settings.value%type := null;
     begin
-        dbms_output.enable(999999);
-        
         -- Query DATADOG_SETTINGS by key
         select value into l_return_value from datadog_settings where key = pi_key;
         

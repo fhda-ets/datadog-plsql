@@ -40,10 +40,7 @@ begin
     
     -- Query USER_TABLES to see if the Datadog settings table exists
     dbms_output.put_line('[Install] Checking if DATADOG_SETTINGS table exists in schema ' || user);
-    select count(*)
-    into l_table_exists
-    from user_tables
-    where table_name = 'DATADOG_SETTINGS';
+    select count(*) into l_table_exists from user_tables where table_name = 'DATADOG_SETTINGS';
     
     -- If not, create the table
     if l_table_exists < 1 then

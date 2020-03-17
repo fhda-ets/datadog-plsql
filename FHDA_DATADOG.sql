@@ -49,10 +49,6 @@ begin
         create table ' || user || '.datadog_settings (
             key varchar2(128) primary key,
             value varchar2(128) not null)';
-            
-        -- Insert some dummy records as placeholders
-        insert into datadog_settings values ('BASE_URL', 'https://api.datadoghq.com');
-        insert into datadog_settings values ('API_KEY', 'replace-me');
     end if;
 end;
 /
